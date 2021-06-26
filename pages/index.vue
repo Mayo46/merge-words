@@ -158,7 +158,7 @@ export default {
               //add them in
               //you could have as many dimensions as you need
             {
-              combos.push(this.firstTextArr[i] + this.secondTextArr[j] + this.thirdTextArr[k])
+              combos.push(this.firstTextArr[i] + ',' + this.secondTextArr[j] + ',' + this.thirdTextArr[k])
             }
           }
         }
@@ -168,7 +168,7 @@ export default {
         {
           for(let j = 0; j < this.secondTextArr.length; j++)
           {
-            combos.push(this.firstTextArr[i] + this.secondTextArr[j])
+            combos.push(this.firstTextArr[i] + ',' + this.secondTextArr[j])
           }
         }
       }
@@ -184,21 +184,19 @@ export default {
   },
   methods:{
    mergeText(){
-     // console.log(this.firstText)
-     // console.log(this.secondText)
-     // console.log(this.thirdText)
-     // if(this.firstText || this.secondText || this.thirdText){
-     //   this.combineText= this.wrapStart + this.firstText + this.separate + this.secondText + this.separate +this.thirdText + this.wrapEnd
-     // }
-     console.log('combination array',this.combine)
-     let data=this.combine.toString()
-     console.log('data',data)
-     this.combineText=data.replace(/,/g, '\n');
-
-     console.log('string replace',this.combineText)
-
-
-
+     let arr = []
+     this.combine.forEach(data => {
+       let newArray = data.split(",");
+         if(newArray.length > 2){
+           arr.push(this.wrapStart + newArray[0] + this.separate + newArray[1] + this.separate + newArray[2]
+             + this.wrapEnd)
+         }else if(newArray.length > 1){
+           arr.push(this.wrapStart + newArray[0] + this.separate + newArray[1] + this.wrapEnd)
+         }else {
+           arr.push(this.wrapStart + newArray[0] + this.wrapEnd)
+         }
+     })
+     this.combineText = arr.toString().replace(/,/g, '\n')
    },
     wrapping(){
      this.wrapStart='"'
