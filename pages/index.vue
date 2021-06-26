@@ -47,12 +47,13 @@
           >
             <v-textarea
               label="Enter some words here"
-              auto-grow
+
               outlined
               rows="4"
               row-height="50"
               v-model="firstText"
-              clearable
+              height="210"
+
             ></v-textarea>
           </v-col>
           <v-col
@@ -74,18 +75,19 @@
           >
             <v-textarea
               label="Enter some words here"
-              auto-grow
+
               outlined
               rows="4"
               row-height="50"
               v-model="thirdText"
-              clearable
+              height="210"
             ></v-textarea>
           </v-col>
 
 
         </v-row>
       </v-container>
+      <v-btn @click="combination">combine</v-btn>
       <p class="option-tag" @click="showOption=! showOption" > + Extra Options</p>
       <div v-show="showOption===true">
         <div class="featured-section mt-3">
@@ -107,7 +109,7 @@
           </div>
         </div>
       </div>
-      <h2 class="text-center mt-5 combination-text" v-if="combineText">1 combinations possible</h2>
+      <h2 class="text-center mt-5 combination-text" v-if="combinationLength">{{combinationLength}} combinations possible</h2>
       <h2 class="text-center mt-5 combination-text" v-else>0 combinations possible</h2>
       <div class="text-center">
         <v-btn class="mt-5 mb-5" color="primary" @click="mergeText">Merge</v-btn>
@@ -136,8 +138,50 @@ export default {
      wrapStart: '',
      wrapEnd: '',
      isActive:'Space',
-     activeWrap:'Nothing'
+     activeWrap:'Nothing',
+     firstTextArr:[],
+     secondTextArr:[],
+     thirdTextArr:[],
+     combinationLength:'',
    }
+  },
+  watch:{
+    firstText(){
+      this.firstTextArr= this.firstText.split("\n")
+      console.log('firstTextArr',this.firstTextArr)
+    },
+    secondText(){
+      this.secondTextArr= this.secondText.split("\n")
+      console.log('secondTextArr',this.secondTextArr)
+    },
+    thirdText(){
+      this.thirdTextArr= this.thirdText.split("\n")
+      console.log('thirdTextArr',this.thirdTextArr)
+    },
+  },
+  computed:{
+    combine(){
+      let combos = [] //or combos = new Array(2);
+
+      for(let i = 0; i < this.firstTextArr.length; i++)
+      {
+        for(let j = 0; j < this.secondTextArr.length; j++)
+        {
+          for(let k = 0; k < this.thirdTextArr.length; k++)
+          //you would access the element of the array as array1[i] and array2[j]
+          //create and array with as many elements as the number of arrays you are to combine
+          //add them in
+          //you could have as many dimensions as you need
+          {
+            combos.push(this.firstTextArr[i] + this.secondTextArr[j] + this.thirdTextArr[k])
+          }
+
+        }
+      }
+
+
+      return combos;
+    }
   },
   methods:{
    mergeText(){
@@ -168,7 +212,14 @@ export default {
      this.firstText="ladies\n" + "women\n" + "designer\n" + "fashion"
      this.secondText="shoes\n" + "boots\n" + "sandals\n" + "stiletto heels"
      this.thirdText="New York\n" + "New Jersey\n" + "Long Island City\n" + "Manhattan"
+    },
+
+    combination(){
+      this.combinationLength=this.combine.length
+     console.log(this.combine.length,'combine',this.combine)
     }
+
+
   }
 }
 </script>
