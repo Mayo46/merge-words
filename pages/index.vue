@@ -94,13 +94,12 @@
           </div>
         </div>
       </div>
-      <h2 class="text-center mt-5 combination-text" v-if="combine.length">{{this.combine.length}} combinations possible</h2>
+      <h2 class="text-center mt-5 combination-text" v-if="combine.length">{{combine.length}} combinations possible</h2>
       <h2 class="text-center mt-5 combination-text" v-else>0 combinations possible</h2>
       <div class="text-center">
         <v-btn class="mt-5 mb-5" color="primary" @click="mergeText">Merge</v-btn>
       </div>
       <v-textarea
-
         outlined
         rows="4"
         row-height="50"
@@ -132,15 +131,12 @@ export default {
   watch:{
     firstText(){
       this.firstTextArr= this.firstText.split("\n")
-      // console.log('firstTextArr',this.firstTextArr)
     },
     secondText(){
       this.secondTextArr= this.secondText.split("\n")
-      // console.log('secondTextArr',this.secondTextArr)
     },
     thirdText(){
       this.thirdTextArr= this.thirdText.split("\n")
-      // console.log('thirdTextArr',this.thirdTextArr)
     },
   },
   computed:{
@@ -153,10 +149,6 @@ export default {
           for(let j = 0; j < this.secondTextArr.length; j++)
           {
             for(let k = 0; k < this.thirdTextArr.length; k++)
-              //you would access the element of the array as array1[i] and array2[j]
-              //create and array with as many elements as the number of arrays you are to combine
-              //add them in
-              //you could have as many dimensions as you need
             {
               combos.push(this.firstTextArr[i] + ',' + this.secondTextArr[j] + ',' + this.thirdTextArr[k])
             }
@@ -168,6 +160,10 @@ export default {
         {
           for(let j = 0; j < this.secondTextArr.length; j++)
           {
+            //you would access the element of the array as array1[i] and array2[j]
+            //create and array with as many elements as the number of arrays you are to combine
+            //add them in
+            //you could have as many dimensions as you need
             combos.push(this.firstTextArr[i] + ',' + this.secondTextArr[j])
           }
         }
@@ -178,7 +174,6 @@ export default {
             combos.push(this.firstTextArr[i])
         }
       }
-
       return combos;
     }
   },
@@ -190,10 +185,12 @@ export default {
          if(newArray.length > 2){
            arr.push((this.separate === '+' ? this.separate : '') + this.wrapStart + newArray[0] +
              this.separate + newArray[1] + this.separate + newArray[2] + this.wrapEnd)
-         }else if(newArray.length > 1){
+         }
+         else if(newArray.length > 1){
            arr.push((this.separate === '+' ? this.separate : '') + this.wrapStart + newArray[0]
              + this.separate + newArray[1] + this.wrapEnd)
-         }else {
+         }
+         else {
            arr.push((this.separate === '+' ? this.separate : '') + this.wrapStart + newArray[0] + this.wrapEnd)
          }
      })
