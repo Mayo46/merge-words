@@ -87,7 +87,7 @@
 
         </v-row>
       </v-container>
-      <v-btn @click="combination">combine</v-btn>
+<!--      <v-btn @click="combination">combine</v-btn>-->
       <p class="option-tag" @click="showOption=! showOption" > + Extra Options</p>
       <div v-show="showOption===true">
         <div class="featured-section mt-3">
@@ -109,7 +109,7 @@
           </div>
         </div>
       </div>
-      <h2 class="text-center mt-5 combination-text" v-if="combinationLength">{{combinationLength}} combinations possible</h2>
+      <h2 class="text-center mt-5 combination-text" v-if="combine.length">{{this.combine.length}} combinations possible</h2>
       <h2 class="text-center mt-5 combination-text" v-else>0 combinations possible</h2>
       <div class="text-center">
         <v-btn class="mt-5 mb-5" color="primary" @click="mergeText">Merge</v-btn>
