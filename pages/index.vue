@@ -188,12 +188,13 @@ export default {
      this.combine.forEach(data => {
        let newArray = data.split(",");
          if(newArray.length > 2){
-           arr.push(this.wrapStart + newArray[0] + this.separate + newArray[1] + this.separate + newArray[2]
-             + this.wrapEnd)
+           arr.push((this.separate === '+' ? this.separate : '') + this.wrapStart + newArray[0] +
+             this.separate + newArray[1] + this.separate + newArray[2] + this.wrapEnd)
          }else if(newArray.length > 1){
-           arr.push(this.wrapStart + newArray[0] + this.separate + newArray[1] + this.wrapEnd)
+           arr.push((this.separate === '+' ? this.separate : '') + this.wrapStart + newArray[0]
+             + this.separate + newArray[1] + this.wrapEnd)
          }else {
-           arr.push(this.wrapStart + newArray[0] + this.wrapEnd)
+           arr.push((this.separate === '+' ? this.separate : '') + this.wrapStart + newArray[0] + this.wrapEnd)
          }
      })
      this.combineText = arr.toString().replace(/,/g, '\n')
