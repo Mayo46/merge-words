@@ -18,7 +18,7 @@
       :absolute="!fixed"
       app
       color="#262d3d"
-      height="65"
+      height="75"
     >
       <span class="header-title">© Copyright 2021 Wordsmerge.com</span>
       <v-spacer></v-spacer>

@@ -2,14 +2,6 @@
     <div class="custom-container">
       <div class="mt-3">
         <div class="banner-section">
-<!--          <div class="left-section">-->
-<!--            <img-->
-<!--              class="VuetifyLogo"-->
-<!--              alt="Vuetify Logo"-->
-<!--              src="/vuetify-logo.svg"-->
-<!--            >-->
-<!--          </div>-->
-
           <div class="right-section">
             <div  class="mb-4 display-block" >
               <h1 class="heading">mergewords</h1>
@@ -36,7 +28,6 @@
               <a class="sub-description link" @click="adwords" tabindex="0">Adwords</a>)
             </p>
           </div>
-
         </div>
       </div>
       <v-container fluid>
@@ -47,13 +38,11 @@
           >
             <v-textarea
               label="Enter some words here"
-
               outlined
               rows="4"
               row-height="50"
               v-model="firstText"
               height="210"
-
             ></v-textarea>
           </v-col>
           <v-col
@@ -75,7 +64,6 @@
           >
             <v-textarea
               label="Enter some words here"
-
               outlined
               rows="4"
               row-height="50"
@@ -83,21 +71,18 @@
               height="210"
             ></v-textarea>
           </v-col>
-
-
         </v-row>
       </v-container>
-<!--      <v-btn @click="combination">combine</v-btn>-->
       <p class="option-tag" @click="showOption=! showOption" > + Extra Options</p>
       <div v-show="showOption===true">
         <div class="featured-section mt-3">
           <div class="featured-section-left">
               <span class="featured-title">Separator:</span>
-              <v-btn @click="separate = ''; showCustomField= false;isActive = 'Nothing'" color="#dfe3e9" depressed :class="[  isActive==='Nothing' ? 'active' : '']">Nothing</v-btn>
-              <v-btn @click="separate = ' '; showCustomField= false;isActive = 'Space'" color="#dfe3e9" depressed :class="[  isActive==='Space' ? 'active' : '']">Space</v-btn>
-              <v-btn @click="separate = '-'; showCustomField= false;isActive = 'Minus'" color="#dfe3e9" depressed :class="[  isActive==='Minus' ? 'active' : '']">Minus</v-btn>
-              <v-btn @click="separate = '+'; showCustomField= false;isActive = 'Plus'" color="#dfe3e9" depressed :class="[  isActive==='Plus' ? 'active' : '']">Plus</v-btn>
-              <v-btn @click="showCustomField=true; separate='';isActive = 'Custom'" color="#dfe3e9"  depressed :class="[  isActive==='Custom' ? 'active' : '']">Custom   <v-text-field class="custom-text-field" v-if="showCustomField" v-model="separate" ></v-text-field></v-btn>
+              <v-btn class="mb-2" @click="separate = ''; showCustomField= false;isActive = 'Nothing'" color="#dfe3e9" depressed :class="[  isActive==='Nothing' ? 'active' : '']">Nothing</v-btn>
+              <v-btn class="mb-2" @click="separate = ' '; showCustomField= false;isActive = 'Space'" color="#dfe3e9" depressed :class="[  isActive==='Space' ? 'active' : '']">Space</v-btn>
+              <v-btn class="mb-2" @click="separate = '-'; showCustomField= false;isActive = 'Minus'" color="#dfe3e9" depressed :class="[  isActive==='Minus' ? 'active' : '']">Minus</v-btn>
+              <v-btn class="mb-2" @click="separate = '+'; showCustomField= false;isActive = 'Plus'" color="#dfe3e9" depressed :class="[  isActive==='Plus' ? 'active' : '']">Plus</v-btn>
+              <v-btn class="mb-2" @click="showCustomField=true; separate='';isActive = 'Custom'" color="#dfe3e9"  depressed :class="[  isActive==='Custom' ? 'active' : '']">Custom   <v-text-field class="custom-text-field" v-if="showCustomField" v-model="separate" ></v-text-field></v-btn>
           </div>
           <div class="">
             <div class="">
