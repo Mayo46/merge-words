@@ -115,12 +115,12 @@
         <v-btn class="mt-5 mb-5" color="primary" @click="mergeText">Merge</v-btn>
       </div>
       <v-textarea
-        auto-grow
+
         outlined
         rows="4"
         row-height="50"
         v-model="combineText"
-        clearable
+       height="250"
       ></v-textarea>
     </div>
 </template>
@@ -142,56 +142,77 @@ export default {
      firstTextArr:[],
      secondTextArr:[],
      thirdTextArr:[],
-     combinationLength:'',
    }
   },
   watch:{
     firstText(){
       this.firstTextArr= this.firstText.split("\n")
-      console.log('firstTextArr',this.firstTextArr)
+      // console.log('firstTextArr',this.firstTextArr)
     },
     secondText(){
       this.secondTextArr= this.secondText.split("\n")
-      console.log('secondTextArr',this.secondTextArr)
+      // console.log('secondTextArr',this.secondTextArr)
     },
     thirdText(){
       this.thirdTextArr= this.thirdText.split("\n")
-      console.log('thirdTextArr',this.thirdTextArr)
+      // console.log('thirdTextArr',this.thirdTextArr)
     },
   },
   computed:{
     combine(){
       let combos = [] //or combos = new Array(2);
 
-      for(let i = 0; i < this.firstTextArr.length; i++)
-      {
-        for(let j = 0; j < this.secondTextArr.length; j++)
+      if(this.firstText.length>0 && this.secondTextArr.length>0 && this.thirdTextArr.length>0){
+        for(let i = 0; i < this.firstTextArr.length; i++)
         {
-          for(let k = 0; k < this.thirdTextArr.length; k++)
-          //you would access the element of the array as array1[i] and array2[j]
-          //create and array with as many elements as the number of arrays you are to combine
-          //add them in
-          //you could have as many dimensions as you need
+          for(let j = 0; j < this.secondTextArr.length; j++)
           {
-            combos.push(this.firstTextArr[i] + this.secondTextArr[j] + this.thirdTextArr[k])
+            for(let k = 0; k < this.thirdTextArr.length; k++)
+              //you would access the element of the array as array1[i] and array2[j]
+              //create and array with as many elements as the number of arrays you are to combine
+              //add them in
+              //you could have as many dimensions as you need
+            {
+              combos.push(this.firstTextArr[i] + this.secondTextArr[j] + this.thirdTextArr[k])
+            }
           }
-
         }
       }
-
+      else if(this.firstText.length>0 && this.secondTextArr.length>0){
+        for(let i = 0; i < this.firstTextArr.length; i++)
+        {
+          for(let j = 0; j < this.secondTextArr.length; j++)
+          {
+            combos.push(this.firstTextArr[i] + this.secondTextArr[j])
+          }
+        }
+      }
+      else {
+        for(let i = 0; i < this.firstTextArr.length; i++)
+        {
+            combos.push(this.firstTextArr[i])
+        }
+      }
 
       return combos;
     }
   },
   methods:{
    mergeText(){
-     console.log(this.firstText)
-     console.log(this.secondText)
-     console.log(this.thirdText)
-     if(this.firstText || this.secondText || this.thirdText){
-       this.combineText= this.wrapStart + this.firstText + this.separate + this.secondText + this.separate +this.thirdText + this.wrapEnd
-     }
-     console.log(this.combineText)
+     // console.log(this.firstText)
+     // console.log(this.secondText)
+     // console.log(this.thirdText)
+     // if(this.firstText || this.secondText || this.thirdText){
+     //   this.combineText= this.wrapStart + this.firstText + this.separate + this.secondText + this.separate +this.thirdText + this.wrapEnd
+     // }
+     console.log('combination array',this.combine)
+     let data=this.combine.toString()
+     console.log('data',data)
+     this.combineText=data.replace(/,/g, '\n');
+
+     console.log('string replace',this.combineText)
+
+
 
    },
     wrapping(){
@@ -213,13 +234,6 @@ export default {
      this.secondText="shoes\n" + "boots\n" + "sandals\n" + "stiletto heels"
      this.thirdText="New York\n" + "New Jersey\n" + "Long Island City\n" + "Manhattan"
     },
-
-    combination(){
-      this.combinationLength=this.combine.length
-     console.log(this.combine.length,'combine',this.combine)
-    }
-
-
   }
 }
 </script>
