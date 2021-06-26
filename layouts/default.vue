@@ -23,6 +23,7 @@
       <span class="header-title">© Copyright 2021 Wordsmerge.com</span>
       <v-spacer></v-spacer>
       <span class="header-title">Contact Us: Wordsmerge@inboxeen.com</span>
+      <span class="header-title">Powered by Mubashar Mayo</span>
 
     </v-footer>
   </v-app>
