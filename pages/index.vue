@@ -142,7 +142,7 @@ export default {
   computed:{
     combine(){
       let combos = [] //or combos = new Array(2);
-
+      //when all inputs have some data
       if(this.firstText.length>0 && this.secondTextArr.length>0 && this.thirdTextArr.length>0){
         for(let i = 0; i < this.firstTextArr.length; i++)
         {
@@ -155,6 +155,7 @@ export default {
           }
         }
       }
+      // when first and second input fields have some data
       else if(this.firstText.length>0 && this.secondTextArr.length>0){
         for(let i = 0; i < this.firstTextArr.length; i++)
         {
@@ -168,6 +169,17 @@ export default {
           }
         }
       }
+      // when first and third input fields have some data
+      else if(this.firstText.length>0 && this.thirdTextArr.length>0){
+        for(let i = 0; i < this.firstTextArr.length; i++)
+        {
+          for(let k = 0; k < this.thirdTextArr.length; k++)
+          {
+            combos.push(this.firstTextArr[i] + ',' + this.thirdTextArr[k])
+          }
+        }
+      }
+      // when first  input fields have some data
       else {
         for(let i = 0; i < this.firstTextArr.length; i++)
         {
