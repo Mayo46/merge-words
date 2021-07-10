@@ -30,8 +30,26 @@
           </div>
         </div>
       </div>
+<!--      <v-container fluid>-->
+<!--        <v-row align="center">-->
+<!--          <v-col class="d-flex" cols="12" sm="6" md="6">-->
+<!--            <v-select :items="items" label="Select Prefix or Suffix" outlined v-model="selectOption"></v-select>-->
+<!--          </v-col>-->
+<!--          <v-col class="d-flex" cols="12" sm="6" md="6">-->
+<!--            <v-select :items="fields" label="Select Fields" outlined v-model="selectField" v-show="selectOption"></v-select>-->
+<!--          </v-col>-->
+<!--        </v-row>-->
+<!--      </v-container>-->
       <v-container fluid>
         <v-row>
+          <v-col class="d-flex" cols="12" sm="6" md="6">
+            <v-select :items="items" label="Select Prefix or Suffix" outlined v-model="selectOption"></v-select>
+          </v-col>
+          <v-col class="d-flex" cols="12" sm="6" md="6">
+            <v-select :items="fields" label="Select Fields" outlined v-model="selectField" v-show="selectOption"></v-select>
+          </v-col>
+
+
           <v-col
             cols="12"
             sm="4"
@@ -99,13 +117,7 @@
       <div class="text-center">
         <v-btn class="mt-5 mb-5" color="primary" @click="mergeText">Merge</v-btn>
       </div>
-      <v-textarea
-        outlined
-        rows="4"
-        row-height="50"
-        v-model="combineText"
-       height="250"
-      ></v-textarea>
+      <v-textarea outlined rows="4" row-height="50" v-model="combineText" height="250"></v-textarea>
     </div>
 </template>
 <script>
@@ -126,6 +138,19 @@ export default {
      firstTextArr:[],
      secondTextArr:[],
      thirdTextArr:[],
+     selectOption:'',
+     selectField:'',
+     items: ['prefix', 'suffix',],
+     fields:['firstText','secondText','thirdText'],
+     suffix:['able','acity','ade','age','aholic','al','algia','an','ance','ant','ar','ard','arian','arium','ary','ate','ation','ative','cide','cracy',
+       'crat','cule','Cy','cycle','dom','dox','ectomy','ed','ee','eer','emia','en','ence','ency','ent','er','ern','escence','ese','esque','ess','est',
+       'etic','ette','ful','fy','gam','gamy','gon','gonic','hood','ial','ian','iasis','iatric', 'ible','ic','ile','ily','ine','ing', 'ion','ious','ish',
+       'ism','ist','ite','itis','ity','ive','ization','ize','less','let','like','ling','loger', 'logist','log','ly','ment','ness','oid','ology','oma',
+       'onym','opia','opsy','or','ory','osis','ous','path','pathy','phile','phobi','phone','phyte','plegia','plegic','pnea','scopy','scope','scribe',
+       'script','sect','ship','sion','some','sophy','sophic','th','tion','tome','trophy','tude','ty','ular','uous','ure','ward','ware','wise','y'],
+     prefix:['a-','an-','ante-','anti-','auto-','circum-','co-','com-','con-','contra-','contro-','de-','dis-','en-','ex-','extra-','hetero-','homo-',
+       'homeo-','hyper-','il-','im-','in-','ir-','inter-','intra-','intro-','macro-','micro-','mono-','non-','omni-','post-','pre-','pro-','sub-','sym-',
+       'syn-','tele-','trans-','tri-','un-','uni-','up',]
    }
   },
   watch:{
