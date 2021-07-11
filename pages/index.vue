@@ -30,26 +30,9 @@
           </div>
         </div>
       </div>
-<!--      <v-container fluid>-->
-<!--        <v-row align="center">-->
-<!--          <v-col class="d-flex" cols="12" sm="6" md="6">-->
-<!--            <v-select :items="items" label="Select Prefix or Suffix" outlined v-model="selectOption"></v-select>-->
-<!--          </v-col>-->
-<!--          <v-col class="d-flex" cols="12" sm="6" md="6">-->
-<!--            <v-select :items="fields" label="Select Fields" outlined v-model="selectField" v-show="selectOption"></v-select>-->
-<!--          </v-col>-->
-<!--        </v-row>-->
-<!--      </v-container>-->
+
       <v-container fluid>
         <v-row>
-          <v-col class="d-flex" cols="12" sm="6" md="6">
-            <v-select :items="items" label="Select Prefix or Suffix" outlined v-model="selectOption"></v-select>
-          </v-col>
-          <v-col class="d-flex" cols="12" sm="6" md="6">
-            <v-select :items="fields" label="Select Fields" outlined v-model="selectField" v-show="selectOption"></v-select>
-          </v-col>
-
-
           <v-col
             cols="12"
             sm="4"
@@ -111,6 +94,19 @@
             </div>
           </div>
         </div>
+        <v-container fluid>
+          <v-row align="center">
+            <v-col class="d-flex" cols="12" sm="6" md="4">
+              <v-select :items="items" label="Select Prefix or Suffix" outlined v-model="selectOption"></v-select>
+            </v-col>
+            <v-col class="d-flex" cols="12" sm="6" md="4">
+              <v-select :items="fields" label="Select Fields" outlined v-model="selectField" v-show="selectOption"></v-select>
+            </v-col>
+            <v-col class="d-flex" cols="12" sm="6" md="4">
+              <v-btn class="mb-8" color="primary" @click="add" v-show="selectOption && selectField" rounded>Add</v-btn>
+            </v-col>
+          </v-row>
+        </v-container>
       </div>
       <h2 class="text-center mt-5 combination-text" v-if="combine.length">{{combine.length}} combinations possible</h2>
       <h2 class="text-center mt-5 combination-text" v-else>0 combinations possible</h2>
@@ -140,17 +136,35 @@ export default {
      thirdTextArr:[],
      selectOption:'',
      selectField:'',
-     items: ['prefix', 'suffix',],
-     fields:['firstText','secondText','thirdText'],
+     items: [
+       {text:'All English prefixes', value:1},
+       {text:'All English suffix', value:2},
+       {text:'Most Common domain prefix', value:3},
+       {text:'Most Common domain Suffix', value:4},
+       {text:'Add English letters A,B,C,....Z', value:5},
+       ],
+
+     fields:[
+       {text:'First Text Field', value:1},
+       {text:'Second Text Field', value:2},
+       {text:'Third Text Field', value:3},
+       ],
+
      suffix:['able','acity','ade','age','aholic','al','algia','an','ance','ant','ar','ard','arian','arium','ary','ate','ation','ative','cide','cracy',
        'crat','cule','Cy','cycle','dom','dox','ectomy','ed','ee','eer','emia','en','ence','ency','ent','er','ern','escence','ese','esque','ess','est',
        'etic','ette','ful','fy','gam','gamy','gon','gonic','hood','ial','ian','iasis','iatric', 'ible','ic','ile','ily','ine','ing', 'ion','ious','ish',
        'ism','ist','ite','itis','ity','ive','ization','ize','less','let','like','ling','loger', 'logist','log','ly','ment','ness','oid','ology','oma',
        'onym','opia','opsy','or','ory','osis','ous','path','pathy','phile','phobi','phone','phyte','plegia','plegic','pnea','scopy','scope','scribe',
        'script','sect','ship','sion','some','sophy','sophic','th','tion','tome','trophy','tude','ty','ular','uous','ure','ward','ware','wise','y'],
+
      prefix:['a-','an-','ante-','anti-','auto-','circum-','co-','com-','con-','contra-','contro-','de-','dis-','en-','ex-','extra-','hetero-','homo-',
        'homeo-','hyper-','il-','im-','in-','ir-','inter-','intra-','intro-','macro-','micro-','mono-','non-','omni-','post-','pre-','pro-','sub-','sym-',
-       'syn-','tele-','trans-','tri-','un-','uni-','up',]
+       'syn-','tele-','trans-','tri-','un-','uni-','up',],
+
+     domainPrefix:['my','the','web','go','','','','','','','','','','','','','','','','','','','','','','','','',],
+     domainSuffix:['online','web','media','world','net','','','','','','','','','','','','','','','','',],
+
+     letters:['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
    }
   },
   watch:{
@@ -252,6 +266,9 @@ export default {
      this.secondText="shoes\n" + "boots\n" + "sandals\n" + "stiletto heels"
      this.thirdText="New York\n" + "New Jersey\n" + "Long Island City\n" + "Manhattan"
     },
+    add(){
+      console.log('option',this.selectOption,'Field',this.selectField)
+    }
   }
 }
 </script>
