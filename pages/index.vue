@@ -137,17 +137,17 @@ export default {
      selectOption:'',
      selectField:'',
      items: [
-       {text:'All English prefixes', value:1},
-       {text:'All English suffix', value:2},
-       {text:'Most Common domain prefix', value:3},
-       {text:'Most Common domain Suffix', value:4},
-       {text:'Add English letters A,B,C,....Z', value:5},
+       {text:'All English prefixes', value:'prefix'},
+       {text:'All English suffix', value:'suffix'},
+       {text:'Most Common domain prefix', value:'domainPrefix'},
+       {text:'Most Common domain Suffix', value:'domainSuffix'},
+       {text:'Add English letters A,B,C,....Z', value:'letters'},
        ],
 
      fields:[
-       {text:'First Text Field', value:1},
-       {text:'Second Text Field', value:2},
-       {text:'Third Text Field', value:3},
+       {text:'First Text Field', value:'firstText'},
+       {text:'Second Text Field', value:'secondText'},
+       {text:'Third Text Field', value:'thirdText'},
        ],
 
      suffix:['able','acity','ade','age','aholic','al','algia','an','ance','ant','ar','ard','arian','arium','ary','ate','ation','ative','cide','cracy',
@@ -303,6 +303,7 @@ export default {
        'privacy','bluesky','ala','magazine','most','mysocial','poster','lava','mls','lt','yard','dino','sac','prof','pot','identity','gate','program',
        'bean','finger','avid','bf','fetish',
      ],
+
      domainSuffix:[
        'online','web','media','world','net','group','blog','shop','book','store','inc','tech','design','box','now','site','news','app','club','pro',
        'network','plus','tv','zone','link','co','cloud','it','life','works','city','hub','man','list','direct','info','mail','central','marketing','usa',
@@ -537,7 +538,61 @@ export default {
      this.thirdText="New York\n" + "New Jersey\n" + "Long Island City\n" + "Manhattan"
     },
     add(){
-      console.log('option',this.selectOption,'Field',this.selectField)
+      let options = [] , field = '' , newArray = []
+      switch (this.selectOption)
+      {
+        case "prefix":
+          options = this.prefix
+          break;
+        case "suffix":
+          options = this.suffix
+          break;
+        case "domainPrefix":
+          options = this.domainPrefix
+          break;
+        case "domainSuffix":
+          options = this.domainSuffix
+          break;
+        case "letters":
+          options = this.letters
+          break;
+      }
+
+      switch (this.selectField)
+      {
+        case "firstText":
+          field = this.firstTextArr
+          break;
+        case "secondText":
+          field = this.secondTextArr
+          break;
+        case "thirdText":
+          field = this.thirdTextArr
+          break;
+      }
+
+      options.map(option => {
+        field.map(text => {
+          if(this.selectOption === 'suffix' || this.selectOption === 'domainSuffix'){
+            newArray.push(text + option)
+          } else {
+            newArray.push(option + text)
+          }
+        })
+      })
+      switch (this.selectField)
+      {
+        case "firstText":
+          this.firstText = newArray.toString().replace(/,/g, '\n')
+          break;
+        case "secondText":
+          this.secondText = newArray.toString().replace(/,/g, '\n')
+          break;
+        case "thirdText":
+          this.thirdText = newArray.toString().replace(/,/g, '\n')
+          break;
+      }
+
     }
   }
 }
