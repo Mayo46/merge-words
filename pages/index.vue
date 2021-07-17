@@ -570,27 +570,41 @@ export default {
           field = this.thirdTextArr
           break;
       }
-
-      options.map(option => {
-        field.map(text => {
-          if(this.selectOption === 'suffix' || this.selectOption === 'domainSuffix'){
-            newArray.push(text + option)
-          } else {
-            newArray.push(option + text)
-          }
+      if(field.length) {
+        options.map(option => {
+          field.map(text => {
+            if(this.selectOption === 'suffix' || this.selectOption === 'domainSuffix'){
+              newArray.push(text + option)
+            } else {
+              newArray.push(option + text)
+            }
+          })
         })
-      })
-      switch (this.selectField)
-      {
-        case "firstText":
-          this.firstText = newArray.toString().replace(/,/g, '\n')
-          break;
-        case "secondText":
-          this.secondText = newArray.toString().replace(/,/g, '\n')
-          break;
-        case "thirdText":
-          this.thirdText = newArray.toString().replace(/,/g, '\n')
-          break;
+        switch (this.selectField)
+        {
+          case "firstText":
+            this.firstText = newArray.toString().replace(/,/g, '\n')
+            break;
+          case "secondText":
+            this.secondText = newArray.toString().replace(/,/g, '\n')
+            break;
+          case "thirdText":
+            this.thirdText = newArray.toString().replace(/,/g, '\n')
+            break;
+        }
+      } else {
+        switch (this.selectField)
+        {
+          case "firstText":
+            this.firstText = options.toString().replace(/,/g, '\n')
+            break;
+          case "secondText":
+            this.secondText = options.toString().replace(/,/g, '\n')
+            break;
+          case "thirdText":
+            this.thirdText = options.toString().replace(/,/g, '\n')
+            break;
+        }
       }
 
     }
