@@ -74,10 +74,7 @@
           </v-col>
         </v-row>
       </v-container>
-      <div class="featured-section">
-        <p class="option-tag" @click="showOption=! showOption" > + Extra Options</p>
-        <v-btn class="ml-5" color="primary" rounded @click="reset">Reset Field</v-btn>
-      </div>
+      <p class="option-tag" @click="showOption=! showOption" > + Extra Options</p>
       <div v-show="showOption===true">
         <div class="featured-section mt-3">
           <div class="featured-section-left">
@@ -140,17 +137,17 @@ export default {
      selectOption:'',
      selectField:'',
      items: [
-       {text:'All English prefixes', value:'prefix'},
-       {text:'All English suffix', value:'suffix'},
-       {text:'Most Common domain prefix', value:'domainPrefix'},
-       {text:'Most Common domain Suffix', value:'domainSuffix'},
-       {text:'Add English letters A,B,C,....Z', value:'letters'},
+       {text:'All English prefixes', value:1},
+       {text:'All English suffix', value:2},
+       {text:'Most Common domain prefix', value:3},
+       {text:'Most Common domain Suffix', value:4},
+       {text:'Add English letters A,B,C,....Z', value:5},
        ],
 
      fields:[
-       {text:'First Text Field', value:'firstText'},
-       {text:'Second Text Field', value:'secondText'},
-       {text:'Third Text Field', value:'thirdText'},
+       {text:'First Text Field', value:1},
+       {text:'Second Text Field', value:2},
+       {text:'Third Text Field', value:3},
        ],
 
      suffix:['able','acity','ade','age','aholic','al','algia','an','ance','ant','ar','ard','arian','arium','ary','ate','ation','ative','cide','cracy',
@@ -164,7 +161,8 @@ export default {
        'homeo-','hyper-','il-','im-','in-','ir-','inter-','intra-','intro-','macro-','micro-','mono-','non-','omni-','post-','pre-','pro-','sub-','sym-',
        'syn-','tele-','trans-','tri-','un-','uni-','up',],
 
-     domainPrefix:['my','the','web','go','super','free','green','net','new','pro','get','mobile','best','all','smart','social','easy','ad','digital','big',
+     domainPrefix:[
+       'my','the','web','go','super','free','green','net','new','pro','get','mobile','best','all','smart','social','easy','ad','digital','big',
        'live','cloud','top','shop','tech','your','auto','global','love','eco','in','real','mr','art','just','team','one','open','you','world','hot','online',
        'daily','ez','buy','blue','re','blog','click','china','photo','home','dr','travel','it','cyber','game','app','virtual','cool','local','video','red',
        'city','power','info','search','club','quick','we','media','mega','star','design','planet','fast','bio','geo','car','on','life','euro','us','max',
@@ -306,7 +304,6 @@ export default {
        'privacy','bluesky','ala','magazine','most','mysocial','poster','lava','mls','lt','yard','dino','sac','prof','pot','identity','gate','program',
        'bean','finger','avid','bf','fetish',
      ],
-
      domainSuffix:[
        'online','web','media','world','net','group','blog','shop','book','store','inc','tech','design','box','now','site','news','app','club','pro',
        'network','plus','tv','zone','link','co','cloud','it','life','works','city','hub','man','list','direct','info','mail','central','marketing','usa',
@@ -541,82 +538,7 @@ export default {
      this.thirdText="New York\n" + "New Jersey\n" + "Long Island City\n" + "Manhattan"
     },
     add(){
-      let options = [] , field = '' , newArray = []
-      switch (this.selectOption)
-      {
-        case "prefix":
-          options = this.prefix
-          break;
-        case "suffix":
-          options = this.suffix
-          break;
-        case "domainPrefix":
-          options = this.domainPrefix
-          break;
-        case "domainSuffix":
-          options = this.domainSuffix
-          break;
-        case "letters":
-          options = this.letters
-          break;
-      }
-
-      switch (this.selectField)
-      {
-        case "firstText":
-          field = this.firstTextArr
-          break;
-        case "secondText":
-          field = this.secondTextArr
-          break;
-        case "thirdText":
-          field = this.thirdTextArr
-          break;
-      }
-      if(field.length) {
-        options.map(option => {
-          field.map(text => {
-            if(this.selectOption === 'suffix' || this.selectOption === 'domainSuffix'){
-              newArray.push(text + option)
-            } else {
-              newArray.push(option + text)
-            }
-          })
-        })
-        switch (this.selectField)
-        {
-          case "firstText":
-            this.firstText = newArray.toString().replace(/,/g, '\n')
-            break;
-          case "secondText":
-            this.secondText = newArray.toString().replace(/,/g, '\n')
-            break;
-          case "thirdText":
-            this.thirdText = newArray.toString().replace(/,/g, '\n')
-            break;
-        }
-      } else {
-        switch (this.selectField)
-        {
-          case "firstText":
-            this.firstText = options.toString().replace(/,/g, '\n')
-            break;
-          case "secondText":
-            this.secondText = options.toString().replace(/,/g, '\n')
-            break;
-          case "thirdText":
-            this.thirdText = options.toString().replace(/,/g, '\n')
-            break;
-        }
-      }
-
-    },
-    reset(){
-     this.firstText=''
-      this.secondText=''
-      this.thirdText=''
-      this.combineText=''
-
+      console.log('option',this.selectOption,'Field',this.selectField)
     }
   }
 }
