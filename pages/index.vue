@@ -117,6 +117,10 @@
         <v-btn class="mt-5 mb-5" color="primary" @click="mergeText">Merge</v-btn>
       </div>
       <v-textarea outlined rows="4" row-height="50" v-model="combineText" height="250"></v-textarea>
+      <div class="featured-section">
+        <v-btn color="primary" @click="copyText=combineText">Copy</v-btn>
+        <v-btn color="primary" class="ml-5" @click="copyOpen">Copy & Open</v-btn>
+      </div>
     </div>
 </template>
 <script>
@@ -139,6 +143,7 @@ export default {
      thirdTextArr:[],
      selectOption:'',
      selectField:'',
+     copyText:'',
      items: [
        {text:'All English prefixes', value:'prefix'},
        {text:'All English suffix', value:'suffix'},
@@ -617,6 +622,13 @@ export default {
       this.thirdText=''
       this.combineText=''
 
+    },
+    copy(){
+     this.copyText=this.combineText
+    },
+    copyOpen(){
+     this.copyText=this.combineText
+      window.open('https://www.godaddy.com/domains/bulk-domain-search')
     }
   }
 }
