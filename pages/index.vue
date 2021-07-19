@@ -118,8 +118,8 @@
       </div>
       <v-textarea outlined rows="4" row-height="50" id="myInput" v-model="combineText" height="250"></v-textarea>
       <div class="featured-section">
-        <v-btn color="primary" @click="copy(false)">Copy</v-btn>
-        <v-btn color="primary" class="ml-5" @click="copy(true)">Copy & Open</v-btn>
+        <v-btn color="primary" @click="copy(false)">Copy All</v-btn>
+        <v-btn color="primary" class="ml-5" @click="copy(true)">Copy $ Open GoDaddy</v-btn>
       </div>
     </div>
 </template>
@@ -628,7 +628,7 @@ export default {
       copyText.select();
       copyText.setSelectionRange(0, 99999); /* For mobile devices */
       document.execCommand("copy");
-      this.combineText = ''
+      // this.combineText = ''
       if(key === true)
       window.open('https://www.godaddy.com/domains/bulk-domain-search')
     }
