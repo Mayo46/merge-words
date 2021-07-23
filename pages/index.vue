@@ -4,17 +4,17 @@
         <div class="banner-section">
           <div class="right-section">
             <div  class="mb-4 display-block" >
-              <h1 class="heading">mergewords</h1>
+              <h1 class="heading">WordsMerge.com</h1>
             </div>
             <div  class="mb-4 display-block " >
               <div  class="mb-2 display-block" >
-                <p class="description">Merge words, fast and easy.</p>
+                <p class="description">Merge and combine words fast and easy.</p>
               </div>
               <div  class="mb-2 display-block" >
-                <p class="description">Use it for domain registrations,</p>
+                <p class="description">Use it for domain registrations, Google Adwords, or whatever. </p>
               </div>
               <div  class="mb-2 display-block"  >
-                <p class="description">Google Adwords, whatever.</p>
+                <p class="description">Or as a business/domain name generator.</p>
               </div>
             </div>
             <div class="mb-2 display-block" >
@@ -119,7 +119,7 @@
       <v-textarea outlined rows="4" row-height="50" id="myInput" v-model="combineText" height="250"></v-textarea>
       <div class="featured-section">
         <v-btn color="primary" @click="copy(false)">Copy All</v-btn>
-        <v-btn color="primary" class="ml-5" @click="copy(true)">Copy $ Open GoDaddy</v-btn>
+        <v-btn color="primary" class="ml-5" @click="copy(true)">Open GoDaddy</v-btn>
       </div>
     </div>
 </template>
