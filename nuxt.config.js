@@ -3,15 +3,15 @@ import colors from 'vuetify/es5/util/colors'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - merge-words',
-    title: 'Words Merge | combine words | Word Combine | Word Merge',
+    titleTemplate: '%s',
+    title: 'Words Merge | Combine words | Merge words | Domaining Tool | Naming tool | Business Name Generator | Combine words for SEO, PPC & linkbuilding',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'WordsMerge is a free tool to combine words easily online, just enter your words in the columns and start merging. Use the Words Merge tool and combine sets of words automatically.' }
+      { hid: 'description', name: 'description', content: 'Free Words Merge | Combine words  | Naming tool  | Domaining Tools | Business Name Generator | Combine words for SEO, PPC & linkbuilding' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -23,7 +23,7 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
+  plugins: [{src: '~/plugins/hotjar.js', mode: 'client'},'@/plugins/gtag'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
