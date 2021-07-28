@@ -507,7 +507,16 @@ export default {
       return combos;
     }
   },
+   beforeMount(){
+    this.triggerConversion();
+ },
   methods:{
+    triggerConversion(){
+      setTimeout(function(){ 
+        gtag('config', 'AW-1006620676');
+        gtag('event', 'conversion', {'send_to': 'AW-1006620676/2s0cCPLN-90CEISg_98D'});
+   }, 120000);
+  },
     mergeText(){
       let arr = []
       this.combine.forEach(data => {
@@ -774,5 +783,9 @@ export default {
 .active{
   background-color: #B6C0CD !important;
   /*color: blue;*/
+}
+.v-application .primary {
+	background-color: #204ecf !important;
+	border-color: #204ecf !important;
 }
 </style>
