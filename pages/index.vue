@@ -165,9 +165,9 @@ export default {
         'onym','opia','opsy','or','ory','osis','ous','path','pathy','phile','phobi','phone','phyte','plegia','plegic','pnea','scopy','scope','scribe',
         'script','sect','ship','sion','some','sophy','sophic','th','tion','tome','trophy','tude','ty','ular','uous','ure','ward','ware','wise','y'],
 
-      prefix:['a-','an-','ante-','anti-','auto-','circum-','co-','com-','con-','contra-','contro-','de-','dis-','en-','ex-','extra-','hetero-','homo-',
-        'homeo-','hyper-','il-','im-','in-','ir-','inter-','intra-','intro-','macro-','micro-','mono-','non-','omni-','post-','pre-','pro-','sub-','sym-',
-        'syn-','tele-','trans-','tri-','un-','uni-','up',],
+      prefix:['a','an','ante','anti','auto','circum','co','com','con','contra','contro','de','dis','en','ex','extra','hetero','homo',
+        'homeo','hyper','il','im','in','ir','inter','intra','intro','macro','micro','mono','non','omni','post','pre','pro','sub','sym',
+        'syn','tele','trans','tri','un','uni','up',],
 
       domainPrefix:["my","the","web","go","super","free","green","net","new","pro","get","mobile","best","all","smart","social","easy","ad","digital",
         "big","live","cloud","top","shop","tech","your","auto","global","love","eco","in","real","mr","art","just","team","one","open","you",
