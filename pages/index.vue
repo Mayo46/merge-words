@@ -116,7 +116,7 @@
     <div class="text-center">
       <v-btn class="mt-5 mb-5" color="primary" @click="mergeText">Merge</v-btn>
     </div>
-    <v-textarea outlined rows="4" row-height="50" id="myInput" v-model="combineText" height="250"></v-textarea>
+    <v-textarea outlined rows="4" row-height="50" id="myInput" placeholder="Add a list of:" v-model="combineText" height="250"></v-textarea>
     <div class="featured-section">
       <v-btn color="primary" @click="copy(false)">Copy All</v-btn>
       <v-btn color="primary" class="ml-5" @click="copy(true)">Copy $ Open GoDaddy</v-btn>
@@ -147,9 +147,9 @@ export default {
       items: [
         {text:'All English Prefixes (re-, dis-, un-, mis- ...)', value:'prefix'},
         {text:'All English Suffixes ( -able, -ness, -ify...)', value:'suffix'},
-        {text:'Most Common Domain prefixes', value:'domainPrefix'},
+        {text:'Most Common Domain Prefixes', value:'domainPrefix'},
         {text:'Most Common Domain Suffixes', value:'domainSuffix'},
-        {text:'Add English letters A,B,C,....Z', value:'letters'},
+        {text:'Add English Letters A,B,C,....Z', value:'letters'},
       ],
 
       fields:[
@@ -505,7 +505,7 @@ export default {
 }
 
 .heading{
-  color: #455065;
+  color: black;
   font-size: 2.25rem;
   font-weight: 300;
   line-height: 1.25em;
