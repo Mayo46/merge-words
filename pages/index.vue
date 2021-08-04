@@ -321,7 +321,7 @@ export default {
       setTimeout(function(){
         gtag('config', 'AW-1006620676');
         gtag('event', 'conversion', {'send_to': 'AW-1006620676/2s0cCPLN-90CEISg_98D'});
-   }, 120000);
+   }, 60000);
   },
     mergeText(){
       let arr = []
