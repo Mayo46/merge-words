@@ -99,13 +99,16 @@
       </div>
       <v-container fluid>
         <v-row align="center">
+          <v-col class="d-flex" cols="12" sm="6" md="2">
+            <span class="featured-title mb-6 pl-0">Add a list of:</span>
+          </v-col>
           <v-col class="d-flex" cols="12" sm="6" md="4">
             <v-select :items="items" label="Select Prefixes, Suffixes etc" outlined v-model="selectOption"></v-select>
           </v-col>
           <v-col class="d-flex" cols="12" sm="6" md="4">
             <v-select :items="fields" label="Select Fields" outlined v-model="selectField" v-show="selectOption"></v-select>
           </v-col>
-          <v-col class="d-flex" cols="12" sm="6" md="4">
+          <v-col class="d-flex" cols="12" sm="6" md="2">
             <v-btn class="mb-8" color="primary" @click="add" v-show="selectOption && selectField" rounded>Add</v-btn>
           </v-col>
         </v-row>
@@ -116,7 +119,7 @@
     <div class="text-center">
       <v-btn class="mt-5 mb-5" color="primary" @click="mergeText">Merge</v-btn>
     </div>
-    <v-textarea outlined rows="4" row-height="50" id="myInput" placeholder="Add a list of:" v-model="combineText" height="250"></v-textarea>
+    <v-textarea outlined rows="4" row-height="50" id="myInput"  v-model="combineText" height="250"></v-textarea>
     <div class="featured-section">
       <v-btn color="primary" @click="copy(false)">Copy All</v-btn>
       <v-btn color="primary" class="ml-5" @click="copy(true)">Copy $ Open GoDaddy</v-btn>
