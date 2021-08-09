@@ -36,7 +36,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
+  modules: ['@nuxtjs/sitemap'
   ],
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
@@ -60,5 +60,17 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+   sitemap: {
+    hostname: 'https://wordsmerge.com',
+    gzip: true,
+    exclude: [
+	  '/index_old',
+      '/dist/**',
+	  '/components/**',
+	  '/vuetify/',
+      '/views/**'
+    ]
   }
+
 }
