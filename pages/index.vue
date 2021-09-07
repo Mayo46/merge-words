@@ -353,7 +353,7 @@ export default {
       this.firstText="ladies\n" + "women\n" + "designer\n" + "fashion"
       this.secondText="shoes\n" + "boots\n" + "sandals\n" + "stiletto heels"
       this.thirdText="New York\n" + "New Jersey\n" + "Long Island City\n" + "Manhattan"
-       setTimeout(() => this.mergeText(), 1000)
+      setTimeout(() => this.mergeText(), 1000)
     },
     add(){
       let options = [] , field = '' , newArray = []
