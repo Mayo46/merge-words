@@ -8,25 +8,13 @@
           </div>
           <div  class="mb-4 display-block " >
             <div  class="mb-2 display-block" >
-              <p class="description">Merge and combine words fast and easy.</p>
-            </div>
-            <div  class="mb-2 display-block" >
-              <p class="description">Use it for naming, domaining, Google Ads, PPC etc. </p>
-            </div>
-            <div  class="mb-2 display-block"  >
-              <p class="description">Or use it as a business & brand name generator.</p>
+              <p class="description">Merge and combine words fast and easily with WordsMerge. Use it for merging words, naming, domaining, Google Ads, PPC, business & brand name generator, etc. Type your keywords in the boxes and press <a class="sub-description link" tabindex="0" @click="mergeText">Merge!</a>
+              Or load some sample data 
+              (<a class="sub-description link" @click="Domain" tabindex="0">Domaining</a>,
+              <a class="sub-description link" @click="link" tabindex="0">Linkbuilding</a>,
+              <a class="sub-description link" @click="adwords" tabindex="0">Google Ads</a>)</p>
             </div>
           </div>
-          <div class="mb-2 display-block" >
-            <p class="sub-description">Type your keywords in the 3 boxes and press
-              <a class="sub-description link" tabindex="0" @click="mergeText">Merge!</a>
-            </p>
-          </div>
-          <p class="sub-description">Or load some sample data
-            (<a class="sub-description link" @click="Domain" tabindex="0">Domaining</a>,
-            <a class="sub-description link" @click="link" tabindex="0">Linkbuilding</a>,
-            <a class="sub-description link" @click="adwords" tabindex="0">Adwords</a>)
-          </p>
         </div>
       </div>
     </div>
@@ -38,7 +26,7 @@
           sm="4"
         >
           <v-textarea
-            label="Enter some words here"
+            label="Enter some words (optional)"
             outlined
             rows="4"
             row-height="50"
@@ -51,7 +39,7 @@
           sm="4"
         >
           <v-textarea
-            label="Enter some words here"
+            label="Enter some words (optional)"
             height="210"
             outlined
             rows="4"
@@ -64,7 +52,7 @@
           sm="4"
         >
           <v-textarea
-            label="Enter some words here"
+            label="Enter some words (optional)"
             outlined
             rows="4"
             row-height="50"
@@ -351,7 +339,7 @@ export default {
     Domain(){
       this.firstText= " iphone\n" + "ipad\n" + "ipod\n" + "imac\n" + "macbook"
       this.secondText="world\n" + "life\n" + "web\n" + "planet\n" + "hub\n" + "center\n" + "club\n" + "central\n" + "spot\n" + "base\n" + "stuff"
-      this.thirdText=".com\n" + ".net\n" + ".org"
+      this.thirdText=".com\n" + ".net\n" + ".org";
     },
     link(){
       this.firstText="mountaineering\n" + "climbing\n" + "hiking\n" + "trekking"
