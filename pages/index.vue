@@ -340,6 +340,8 @@ export default {
       this.firstText= " iphone\n" + "ipad\n" + "ipod\n" + "imac\n" + "macbook"
       this.secondText="world\n" + "life\n" + "web\n" + "planet\n" + "hub\n" + "center\n" + "club\n" + "central\n" + "spot\n" + "base\n" + "stuff"
       this.thirdText=".com\n" + ".net\n" + ".org";
+      setTimeout(() => this.mergeText(), 1000)
+    
     },
     link(){
       this.firstText="mountaineering\n" + "climbing\n" + "hiking\n" + "trekking"
