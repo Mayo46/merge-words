@@ -8,8 +8,11 @@
           </div>
           <div  class="mb-4 display-block " >
             <div  class="mb-2 display-block" >
-              <p class="description">Merge and combine words fast and easily with WordsMerge. Use it for merging words, naming, domaining, Google Ads, PPC, business & brand name generator, etc. Type your keywords in the boxes and press <a class="sub-description link" tabindex="0" @click="mergeText">Merge!</a>
-              Or load some sample data 
+              <p class="description">Merge words quickly and easily with WordsMerge! You can use 
+                this handy tool to combine words for Google Ads, PPC, your business or brand names,
+                 domaining, and much more. Simply type your keywords into the boxes below and click
+                   <a class="sub-description link" tabindex="0" @click="mergeText">Merge</a>
+                You can also load sample data by clicking on the following links.
               (<a class="sub-description link" @click="Domain" tabindex="0">Domaining</a>,
               <a class="sub-description link" @click="link" tabindex="0">Linkbuilding</a>,
               <a class="sub-description link" @click="adwords" tabindex="0">Google Ads</a>)</p>
