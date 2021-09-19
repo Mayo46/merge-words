@@ -3,19 +3,16 @@
     <div class="mt-3">
       <div class="banner-section">
         <div class="right-section">
-          <div  class="mb-4 display-block" >
-            <h1 class="heading">WordsMerge.om</h1>
-          </div>
           <div  class="mb-4 display-block " >
             <div  class="mb-2 display-block" >
               <p class="description">Merge words quickly and easily with WordsMerge! You can use 
                 this handy tool to combine words for Google Ads, PPC, your business or brand names,
                  domaining, and much more. Simply type your keywords into the boxes below and click
-                   <a class="sub-description link" tabindex="0" @click="mergeText">Merge</a>
-                You can also load sample data by clicking on the following links.
+                   <a class="sub-description link" tabindex="0" @click="mergeText">Merge</a>.
+                You can also load sample data by clicking on the following links
               (<a class="sub-description link" @click="Domain" tabindex="0">Domaining</a>,
               <a class="sub-description link" @click="link" tabindex="0">Linkbuilding</a>,
-              <a class="sub-description link" @click="adwords" tabindex="0">Google Ads</a>)</p>
+              <a class="sub-description link" @click="adwords" tabindex="0">Google Ads</a>).</p>
             </div>
           </div>
         </div>
@@ -462,7 +459,7 @@ export default {
   box-sizing: border-box;
   padding: 16px;
 }
-@media (min-width: 768px){
+/* @media (min-width: 768px){
   .left-section {
     flex-grow: 0;
     max-width: 33.333333%;
@@ -472,12 +469,14 @@ export default {
 .left-section{
   margin: 0;
   box-sizing: border-box;
-}
+} */
 @media (min-width: 768px){
   .right-section{
     flex-grow: 0;
-    max-width: 66.666667%;
-    flex-basis: 66.666667%;
+     max-width: 99.9999%;
+    flex-basis: 99.9999%;
+    /* max-width: 66.666667%;
+    flex-basis: 66.666667%; */
   }
 }
 .right-section{
