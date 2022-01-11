@@ -1,3 +1,9 @@
+# merge-words
+
+## Build Setup
+
+```bash
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-208155997-16"></script>
 <script>
@@ -9,11 +15,7 @@
 </script>
 
 
-# merge-words
 
-## Build Setup
-
-```bash
 # install dependencies
 $ npm install
 
