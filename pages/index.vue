@@ -64,7 +64,7 @@
     </v-container>
     <div class="featured-section">
       <p class="option-tag" @click="showOption=! showOption" > + Extra Options</p>
-      <v-btn class="ml-5" color="primary" rounded @click="reset">Reset Field</v-btn>
+      <v-btn class="ml-5" color="primary" rounded @click="reset">Reset Fields</v-btn>
     </div>
     <div v-show="showOption===true">
       <div class="featured-section mt-3">
@@ -110,7 +110,7 @@
     <v-textarea outlined rows="4" row-height="50" id="myInput"  v-model="combineText" height="250"></v-textarea>
     <div class="featured-section">
       <v-btn color="primary" @click="copy(false)">Copy All</v-btn>
-      <v-btn color="primary" class="ml-5" @click="copy(true)">Copy $ Open GoDaddy</v-btn>
+      <v-btn color="primary" class="ml-5" @click="copy(true)">Copy & Open GoDaddy</v-btn>
     </div>
   </div>
 </template>
